@@ -1,9 +1,10 @@
 package com.techyourchance.mvc.screens.common;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import com.techyourchance.mvc.screens.common.toolbar.ObservableToolbarViewMvc;
 import com.techyourchance.mvc.screens.common.toolbar.ToolbarViewMvc;
 import com.techyourchance.mvc.screens.questiondetails.QuestionDetailsViewMvc;
 import com.techyourchance.mvc.screens.questiondetails.QuestionDetailsViewMvcImpl;
@@ -29,11 +30,15 @@ public class ViewMvcFactory {
     }
 
     public QuestionDetailsViewMvc getQuestionDetailsViewMvc(@Nullable ViewGroup parent) {
-        return new QuestionDetailsViewMvcImpl(mLayoutInflater, parent);
+        return new QuestionDetailsViewMvcImpl(mLayoutInflater, parent, this);
     }
 
     public ToolbarViewMvc getToolbarViewMvc(@Nullable ViewGroup parent) {
         return new ToolbarViewMvc(mLayoutInflater, parent);
+    }
+
+    public ObservableToolbarViewMvc getObservableToolbarViewMvc(@Nullable ViewGroup parent) {
+        return new ObservableToolbarViewMvc(mLayoutInflater, parent);
     }
 
 }

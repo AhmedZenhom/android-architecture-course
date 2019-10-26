@@ -24,6 +24,8 @@
             android:paddingEnd="10dp"
             android:gravity="start">
 
+            <include layout="@layout/element_toolbar"/>
+
             <TextView
                 android:id="@+id/txt_question_title"
                 android:layout_width="wrap_content"
